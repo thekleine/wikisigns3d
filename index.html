@@ -1986,20 +1986,36 @@ for (var i = 0; i < input.length; i++){
             gl.uniform1f(shaderProgram.alphaUniform, parseFloat(document.getElementById("alpha").value));
         }
 
+	var ambientR = 0.2;
+	var ambientG = 0.2;
+	var ambientB = 0.2;      
+	var lightDirectionX = -0.25;
+	var lightDirectionY = -0.25;
+	var lightDirectionZ = -1.0;
+	var directionalR = 0.8;
+	var directionalG = 0.8;
+	var directionalB = 0.8;
+
         var lighting = document.getElementById("lighting").checked;
         gl.uniform1i(shaderProgram.useLightingUniform, lighting);
         if (lighting) {
             gl.uniform3f(
                 shaderProgram.ambientColorUniform,
-                parseFloat(document.getElementById("ambientR").value),
-                parseFloat(document.getElementById("ambientG").value),
-                parseFloat(document.getElementById("ambientB").value)
+		ambientR,
+		ambientG,
+		ambientB
+//                parseFloat(document.getElementById("ambientR").value),
+//                parseFloat(document.getElementById("ambientG").value),
+//                parseFloat(document.getElementById("ambientB").value)
             );
 
             var lightingDirection = [
-                parseFloat(document.getElementById("lightDirectionX").value),
-                parseFloat(document.getElementById("lightDirectionY").value),
-                parseFloat(document.getElementById("lightDirectionZ").value)
+		  lightDirectionX,
+		  lightDirectionY,
+		  lightDirectionZ
+//                parseFloat(document.getElementById("lightDirectionX").value),
+//                parseFloat(document.getElementById("lightDirectionY").value),
+//                parseFloat(document.getElementById("lightDirectionZ").value)
             ];
             var adjustedLD = vec3.create();
             vec3.normalize(lightingDirection, adjustedLD);
@@ -2008,9 +2024,12 @@ for (var i = 0; i < input.length; i++){
 
             gl.uniform3f(
                 shaderProgram.directionalColorUniform,
-                parseFloat(document.getElementById("directionalR").value),
-                parseFloat(document.getElementById("directionalG").value),
-                parseFloat(document.getElementById("directionalB").value)
+	    directionalR,
+	    directionalG,
+	    directionalB
+//                parseFloat(document.getElementById("directionalR").value),
+//                parseFloat(document.getElementById("directionalG").value),
+//                parseFloat(document.getElementById("directionalB").value)
             );
         }
 
@@ -2120,35 +2139,6 @@ Use cursor keys to spin the box and <code>Page Up</code>/<code>Page Down</code> 
   Alpha level <input type="text" id="alpha" value="1" /><br/>
 
     <input type="checkbox" id="lighting" unchecked /> Use lighting<br/>
-
-    <br/>
-  <h2>Directional light:</h2>
-
-    <table style="border: 0; padding: 10px;">
-        <tr>
-            <td><b>Direction:</b>
-            <td>X: <input type="text" id="lightDirectionX" value="-0.25" />
-            <td>Y: <input type="text" id="lightDirectionY" value="-0.25" />
-            <td>Z: <input type="text" id="lightDirectionZ" value="-1.0" />
-        </tr>
-        <tr>
-            <td><b>Colour:</b>
-            <td>R: <input type="text" id="directionalR" value="0.8" />
-            <td>G: <input type="text" id="directionalG" value="0.8" />
-            <td>B: <input type="text" id="directionalB" value="0.8" />
-        </tr>
-    </table>
-
-    <h2>Ambient light:</h2>
-
-    <table style="border: 0; padding: 10px;">
-        <tr>
-            <td><b>Colour:</b>
-            <td>R: <input type="text" id="ambientR" value="0.2" />
-            <td>G: <input type="text" id="ambientG" value="0.2" />
-            <td>B: <input type="text" id="ambientB" value="0.2" />
-        </tr>
-    </table>
 
     <script type="text/javascript">
         try {
