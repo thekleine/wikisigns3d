@@ -6,7 +6,7 @@
 <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
 
-<script id="shader-fs" type="x-shader/x-fragment">
+<script id="shader-fs" type="x-shader/x-fragment" src="shader-fs.js">
     precision mediump float;
 
     varying vec2 vTextureCoord;
@@ -22,7 +22,7 @@
     }
 </script>
 
-<script id="shader-vs" type="x-shader/x-vertex">
+<script id="shader-vs" type="x-shader/x-vertex" src="shader-vs.js">
     attribute vec3 aVertexPosition;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
