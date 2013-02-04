@@ -238,13 +238,13 @@ var abstand = abstand = parseFloat(document.getElementById("abstand").value);
             // c8 eckteil oben links vorne
             -1.0-abstand,  1.0+abstand,  1.0+abstand,
              0.0-abstand,  0.5+abstand,  1.0+abstand,
-             0.0-abstand,  0.0+abstand,  0.0+abstand,
+             0.0,  0.0,  0.0,
             -1.0-abstand,  0.5+abstand,  0.0+abstand,
 
             // c8 eckteil oben links vorne
             -1.0-abstand,  0.0+abstand,  1.0+abstand,
              0.0-abstand,  0.5+abstand,  1.0+abstand,
-             0.0-abstand,  0.0+abstand,  0.0+abstand,
+             0.0,  0.0,  0.0,
             -1.0-abstand,  0.5+abstand,  0.0+abstand,
 
             // c8 eckteil oben links vorne deckel
@@ -256,37 +256,37 @@ var abstand = abstand = parseFloat(document.getElementById("abstand").value);
 	];
 	all_vertices[3] = [
 	    // z8 deckel
-            -1.0,  1.0+2*abstand,  1.0,
-             0.0,  0.5+2*abstand,  1.0,
-             0.0,  0.0+2*abstand,  0.0,
-            -1.0,  0.5+2*abstand,  0.0,
+            -1.0-abstand,  1.0+2*abstand,  1.0+abstand,
+             0.0,  0.5+2*abstand,  1.0+abstand,
+             0.0,  0.0,  0.0,
+            -1.0-abstand,  0.5+2*abstand,  0.0,
 
             // z8 deckel
-             1.0,  1.0+2*abstand,  1.0,
-             1.0,  0.5+2*abstand,  0.0,
-             0.0,  0.0+2*abstand,  0.0,
-             0.0,  0.5+2*abstand,  1.0,
+             1.0+abstand,  1.0+2*abstand,  1.0+abstand,
+             1.0+abstand,  0.5+2*abstand,  0.0,
+             0.0,  0.0,  0.0,
+             0.0,  0.5+2*abstand,  1.0+abstand,
 
             // z8 deckel
-            -1.0,  1.0+2*abstand,  -1.0,
-             0.0,  0.5+2*abstand,  -1.0,
-             0.0,  0.0+2*abstand,  0.0,
-            -1.0,  0.5+2*abstand,  0.0,
+            -1.0-abstand,  1.0+2*abstand,  -1.0-abstand,
+             0.0,  0.5+2*abstand,  -1.0-abstand,
+             0.0,  0.0,   0.0,
+            -1.0-abstand,  0.5+2*abstand,   0.0,
 
             // z8 deckel
-             1.0,  1.0+2*abstand,  -1.0,
-             1.0,  0.5+2*abstand,  0.0,
-             0.0,  0.0+2*abstand,  0.0,
-             0.0,  0.5+2*abstand,  -1.0,
+             1.0+abstand,  1.0+2*abstand,  -1.0-abstand,
+             1.0+abstand,  0.5+2*abstand,   0.0,
+             0.0,  0.0,   0.0,
+             0.0,  0.5+2*abstand,  -1.0-abstand,
 
 	     // bugfix
-	    -1.0,  1.0+2*abstand,  1.0,
-             0.0,  0.5+2*abstand,  1.0,
-             1.0,  1.0+2*abstand,  1.0,
+	    -1.0-abstand,  1.0+2*abstand,  1.0+abstand,
+             0.0,  0.5+2*abstand,  1.0+abstand,
+             1.0+abstand,  1.0+2*abstand,  1.0+abstand,
 	     // bugfix
-            -1.0,  1.0+2*abstand,  -1.0,
-             1.0,  1.0+2*abstand,  -1.0,
-             0.0,  0.5+2*abstand,  -1.0,
+            -1.0-abstand,  1.0+2*abstand,  -1.0-abstand,
+             1.0+abstand,  1.0+2*abstand,  -1.0-abstand,
+             0.0,  0.5+2*abstand,  -1.0-abstand,
 
 	];
 	all_vertices[4] = [
@@ -539,62 +539,62 @@ var abstand = abstand = parseFloat(document.getElementById("abstand").value);
 
 	all_vertices[16] = [
             // orange vorne unten links
-             -abstand*0.0618,   -abstand*0.0618,  abstand*0.0618,
-             -abstand*0.0618,    abstand*0.0618,  abstand*0.0618,
-              abstand*0.0618,   -abstand*0.0618,  abstand*0.0618,
+             -abstand*0.31415,   -abstand*0.31415,  abstand*0.31415,
+             -abstand*0.31415,    abstand*0.31415,  abstand*0.31415,
+              abstand*0.31415,   -abstand*0.31415,  abstand*0.31415,
 
             // gelb unten
-             -abstand*0.0618,   -abstand*0.0618,  abstand*0.0618,
-              abstand*0.0618,   -abstand*0.0618,  abstand*0.0618,
-              abstand*0.0618,   -abstand*0.0618, -abstand*0.0618,
+             -abstand*0.31415,   -abstand*0.31415,  abstand*0.31415,
+              abstand*0.31415,   -abstand*0.31415,  abstand*0.31415,
+              abstand*0.31415,   -abstand*0.31415, -abstand*0.31415,
 
             // grün rechts
-             abstand*0.0618,  -abstand*0.0618,   abstand*0.0618,
-             abstand*0.0618,  -abstand*0.0618,  -abstand*0.0618,
-             abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
+             abstand*0.31415,  -abstand*0.31415,   abstand*0.31415,
+             abstand*0.31415,  -abstand*0.31415,  -abstand*0.31415,
+             abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
             
             // hellblau hinten
-             abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
-             abstand*0.0618,  -abstand*0.0618,  -abstand*0.0618,
-            -abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
+             abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
+             abstand*0.31415,  -abstand*0.31415,  -abstand*0.31415,
+            -abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
 
             // violett oben
-             -abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
-             -abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-              abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
+             -abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
+             -abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+              abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
 
             // magenta links
-              -abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-              -abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
-              -abstand*0.0618,  -abstand*0.0618,   abstand*0.0618,
+              -abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+              -abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
+              -abstand*0.31415,  -abstand*0.31415,   abstand*0.31415,
 
 	    
 	    // eckteil schwarz
-	      abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-	     -abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-	      abstand*0.0618,  -abstand*0.0618,   abstand*0.0618,
+	      abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+	     -abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+	      abstand*0.31415,  -abstand*0.31415,   abstand*0.31415,
 
-	      abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-	     -abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-	      abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
+	      abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+	     -abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+	      abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
 
-	      abstand*0.0618,   abstand*0.0618,   abstand*0.0618,
-	      abstand*0.0618,  -abstand*0.0618,   abstand*0.0618,
-	      abstand*0.0618,   abstand*0.0618,  -abstand*0.0618,
+	      abstand*0.31415,   abstand*0.31415,   abstand*0.31415,
+	      abstand*0.31415,  -abstand*0.31415,   abstand*0.31415,
+	      abstand*0.31415,   abstand*0.31415,  -abstand*0.31415,
 	      
   
 	    // eckteil weiss
-              -abstand*0.0618,  -abstand*0.0618,   -abstand*0.0618,
-	      -abstand*0.0618,  -abstand*0.0618,    abstand*0.0618,
-	      -abstand*0.0618,   abstand*0.0618,   -abstand*0.0618,
+              -abstand*0.31415,  -abstand*0.31415,   -abstand*0.31415,
+	      -abstand*0.31415,  -abstand*0.31415,    abstand*0.31415,
+	      -abstand*0.31415,   abstand*0.31415,   -abstand*0.31415,
 
-              -abstand*0.0618,  -abstand*0.0618,   -abstand*0.0618,
-	      -abstand*0.0618,  -abstand*0.0618,    abstand*0.0618,
-	       abstand*0.0618,  -abstand*0.0618,   -abstand*0.0618,
+              -abstand*0.31415,  -abstand*0.31415,   -abstand*0.31415,
+	      -abstand*0.31415,  -abstand*0.31415,    abstand*0.31415,
+	       abstand*0.31415,  -abstand*0.31415,   -abstand*0.31415,
 
-              -abstand*0.0618,  -abstand*0.0618,   -abstand*0.0618,
-	      -abstand*0.0618,   abstand*0.0618,   -abstand*0.0618,
-	       abstand*0.0618,  -abstand*0.0618,   -abstand*0.0618,      
+              -abstand*0.31415,  -abstand*0.31415,   -abstand*0.31415,
+	      -abstand*0.31415,   abstand*0.31415,   -abstand*0.31415,
+	       abstand*0.31415,  -abstand*0.31415,   -abstand*0.31415,      
 	];
 
 	all_vertices[17] = [
